@@ -30,15 +30,16 @@ const inputGroupDrinkingInput = () => {
 };
 const inputGroupDrinkingLabel = () => {
     const inputGroupDrinkingLabel = document.createElement("label");
-    inputGroupDrinkingLabel.innerText = "Borrachos";
+    inputGroupDrinkingLabel.innerText = "Borrachos: ";
     inputGroupDrinkingLabel.classList.add("input-group-text", "flex-grow-1", "col-sm-7");
     return inputGroupDrinkingLabel;
 };
+
 export const inputGroupDrinking = () => {
     const inputGroup = document.createElement("div");
     inputGroup.classList.add("input-group");
-    inputGroup.appendChild(inputGroupDrinkingLabel());
     inputGroup.appendChild(inputGroupDrinkingMinus());
+    inputGroup.appendChild(inputGroupDrinkingLabel());
     inputGroup.appendChild(inputGroupDrinkingInput());
     inputGroup.appendChild(inputGroupDrinkingPlus());
     return inputGroup;
@@ -82,8 +83,8 @@ const inputGroupMaleLabel = () => {
 export const inputGroupMale = () => {
     const inputGroup = document.createElement("div");
     inputGroup.classList.add("input-group");
-    inputGroup.appendChild(inputGroupMaleLabel());
     inputGroup.appendChild(inputGroupMaleMinus());
+    inputGroup.appendChild(inputGroupMaleLabel());
     inputGroup.appendChild(inputGroupMaleInput());
     inputGroup.appendChild(inputGroupMalePlus());
     return inputGroup;
@@ -127,8 +128,8 @@ const inputGroupFemaleLabel = () => {
 export const inputGroupFemale = () => {
     const inputGroup = document.createElement("div");
     inputGroup.classList.add("input-group");
-    inputGroup.appendChild(inputGroupFemaleLabel());
     inputGroup.appendChild(inputGroupFemaleMinus());
+    inputGroup.appendChild(inputGroupFemaleLabel());
     inputGroup.appendChild(inputGroupFemaleInput());
     inputGroup.appendChild(inputGroupFemalePlus());
     return inputGroup;
@@ -172,8 +173,8 @@ const inputGroupChildrenLabel = () => {
 export const inputGroupChildren = () => {
     const inputGroup = document.createElement("div");
     inputGroup.classList.add("input-group");
-    inputGroup.appendChild(inputGroupChildrenLabel());
     inputGroup.appendChild(inputGroupChildrenMinus());
+    inputGroup.appendChild(inputGroupChildrenLabel());
     inputGroup.appendChild(inputGroupChildrenInput());
     inputGroup.appendChild(inputGroupChildrenPlus());
     return inputGroup;

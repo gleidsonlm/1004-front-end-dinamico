@@ -32,7 +32,8 @@ const shoppingList = () => {
 };
 export const sectionShoppingList = () => {
     const sectionShoppingList = document.createElement("section");
-    sectionShoppingList.classList.add("shopping-list", "flex", "flex-column", "align-items-center", "card", "m-2");
+    sectionShoppingList.id = "sectionShoppingList";
+    sectionShoppingList.classList.add("shopping-list", "flex", "flex-column", "align-items-center", "card", "m-2", "d-none");
     sectionShoppingList.appendChild(shoppingList());
     return sectionShoppingList;
 };

@@ -1,6 +1,7 @@
 import {sectionShoppingList} from "./sectionShoppingList.js";
 import {sectionCalculator, sectionCalculatorButton} from "./sectionCalculator.js";
 import {sectionOptions} from "./sectionOptions.js";
+import {sectionNewsletter} from "./sectionNewsletter.js";
 
 const mainTitle = () => {
     const mainTitle = document.createElement("h2");
@@ -20,9 +21,10 @@ export const main = () => {
     main.classList.add("main", "card-body", "flex", "flex-column", "align-items-center", "card");
     main.appendChild(mainTitle());
     main.appendChild(mainText());
-    main.appendChild(sectionShoppingList());
+    main.appendChild(sectionNewsletter());
     main.appendChild(sectionCalculator());
     main.appendChild(sectionCalculatorButton());
     main.appendChild(sectionOptions());
+    main.appendChild(sectionShoppingList());
     return main;
 };

@@ -205,7 +205,7 @@ export function sectionNewsletter() {
             name: nameInput.value,
             email: emailInput.value,
             postalCode: postalCodeInput.value,
-            newsletter: newsletterCheckbox.checked
+            newsletter: newsletterCheckbox.checked,
         };
         localStorage.setItem('churrascometroFormData', JSON.stringify(formData));
 

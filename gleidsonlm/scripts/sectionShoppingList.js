@@ -1,5 +1,6 @@
 import { events } from "./app.js";
 import { meatCalculator, garlicBreadCalculator, coalCalculator, saltCalculator , iceCalculator, sodaCalculator, waterCalculator, beerCalculator } from "./sectionCalculator.js";
+import { deliveryAddress } from "./deliveryAddress.js";
 
 const shoppingListMeat = () => {
     const shoppingListMeat = document.createElement("li");
@@ -152,6 +153,22 @@ const shoppingListBeer = () => {
 
     return shoppingListBeer;
 };
+
+const shoppingListAddress = () => {
+    const shoppingListAddress = document.createElement("li");
+    shoppingListAddress.classList.add("list-group-item");
+    shoppingListAddress.innerText = "Endereço de Entrega:";
+
+    document.addEventListener(events.CALCULAR, (event) => {
+        deliveryAddress().then((address) => {
+            shoppingListAddress.innerText = `Endereço de Entrega: ${address.logradouro}, ${address.bairro}, ${address.localidade}, ${address.uf}`;
+        }).catch((error) => {
+            shoppingListAddress.innerText = `Endereço de Entrega: ${error}`;
+        });
+    });
+
+    return shoppingListAddress;
+};
     
 const shoppingList = () => {
     const shoppingList = document.createElement("ul");
@@ -164,6 +181,7 @@ const shoppingList = () => {
     shoppingList.appendChild(shoppingListSoda());
     shoppingList.appendChild(shoppingListWater());
     shoppingList.appendChild(shoppingListBeer());
+    shoppingList.appendChild(shoppingListAddress());
 
     return shoppingList;
 };
@@ -186,6 +204,6 @@ export const sectionShoppingList = () => {
     sectionShoppingList.classList.add("d-none");
     sectionShoppingList.appendChild(shoppingList());
     sectionShoppingList.appendChild(shoppingListReload());
-
+    
     return sectionShoppingList;
 };

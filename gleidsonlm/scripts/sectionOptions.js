@@ -10,7 +10,8 @@ import { optionsWater } from "./optionsWater.js";
 export const sectionOptions = () => {
     const optionsSection = document.createElement("section");
     optionsSection.id = "sectionOptions";
-    optionsSection.classList.add("options", "flex", "flex-column", "align-items-center", "card", "p-2", "m-2", "d-none");
+    optionsSection.classList.add("options", "flex", "flex-column", "align-items-center", "card", "p-2", "m-2");
+    optionsSection.classList.add("d-none","fade-animation");
     optionsSection.appendChild(optionsTitle());
     optionsSection.appendChild(optionsText());
     optionsSection.appendChild(optionsSectionOptions());

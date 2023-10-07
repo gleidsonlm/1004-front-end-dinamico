@@ -214,7 +214,7 @@ export function sectionNewsletter() {
         document.querySelector('#sectionCalculatorButton').classList.remove('d-none');
 
         // hide sectionNewsletter
-        document.querySelector('#sectionNewsletter').classList.add('d-none');
+        document.querySelector('#sectionNewsletter').classList.add('d-none',"fade-animation");
     });
 
     // Add form to section

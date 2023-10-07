@@ -201,7 +201,7 @@ export const sectionShoppingList = () => {
     const sectionShoppingList = document.createElement("section");
     sectionShoppingList.id = "shopping-list";
     sectionShoppingList.classList.add("flex", "flex-column", "align-items-center", "card", "m-2");
-    sectionShoppingList.classList.add("d-none");
+    sectionShoppingList.classList.add("d-none","fade-animation");
     sectionShoppingList.appendChild(shoppingList());
     sectionShoppingList.appendChild(shoppingListReload());
     

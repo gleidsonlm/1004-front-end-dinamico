@@ -13,12 +13,47 @@ export function garlicBreadCalculator(event) {
     return (male * 2) + (female * 2) + (children * 1);
 }
 
+export function coalCalculator(event) {
+    const {male,female,children} = event.detail;
+    
+    return (male * 1) + (female * 1) + (children * 1);
+}
 
+export function saltCalculator(event) {
+    const {male,female,children} = event.detail;
+    
+    return (male * 0.04) + (female * 0.04) + (children * 0.04);
+}
+
+export function iceCalculator(event) {
+    const {male,female,children} = event.detail;
+    
+    return (Number(male) + Number(female) + Number(children)) / 5;
+}
+
+export function sodaCalculator(event) {
+    const {male,female,children} = event.detail;
+    
+    return (Number(male) + Number(female) + Number(children)) / 2.5;
+}
+
+export function waterCalculator(event) {
+    const {male,female,children} = event.detail;
+    
+    return (Number(male) + Number(female) + Number(children)) / 5;
+}
+
+export function beerCalculator(event) {
+    const {drinking} = event.detail;
+    
+    return drinking * 3;
+}
 
 export const sectionCalculatorButton = () => {
     const sectionCalculatorButton = document.createElement("button");
     sectionCalculatorButton.id = "sectionCalculatorButton";
-    sectionCalculatorButton.classList.add("btn", "btn-primary", "m-2", "d-none");
+    sectionCalculatorButton.classList.add("btn", "btn-primary", "m-2");
+    // sectionCalculatorButton.classList.add("d-none");
     sectionCalculatorButton.innerText = "Calcular";
     sectionCalculatorButton.addEventListener("click", () => {
         const inputGroupDrinkingInput = document.getElementById("drinking");
@@ -45,7 +80,8 @@ export const sectionCalculatorButton = () => {
 export const sectionCalculator = () => {
     const sectionCalculator = document.createElement("section");
     sectionCalculator.id = "sectionCalculator";
-    sectionCalculator.classList.add("calculator", "flex", "flex-column", "align-items-center", "m-2", "d-none");
+    sectionCalculator.classList.add("calculator", "flex", "flex-column", "align-items-center", "m-2");
+    // sectionCalculator.classList.add("d-none");
     sectionCalculator.appendChild(inputGroupMale());
     sectionCalculator.appendChild(inputGroupFemale());
     sectionCalculator.appendChild(inputGroupChildren());

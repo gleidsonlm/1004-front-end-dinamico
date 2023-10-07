@@ -1,12 +1,13 @@
 const inputGroupDrinkingMinus = () => {
     const inputGroupDrinkingMinus = document.createElement("button");
-    inputGroupDrinkingMinus.innerText = "-";
-    inputGroupDrinkingMinus.classList.add("btn", "btn-outline-secondary");
-    inputGroupDrinkingMinus.addEventListener("click", () => {
-        const inputGroupDrinkingInput = inputGroupDrinkingMinus.parentElement.querySelector("input");
+        inputGroupDrinkingMinus.innerText = "-";
+        inputGroupDrinkingMinus.classList.add("btn", "btn-outline-secondary");
 
-        inputGroupDrinkingInput.value = inputGroupDrinkingInput.value > 0 ? parseInt(inputGroupDrinkingInput.value) - 1 : 0;
+        inputGroupDrinkingMinus.addEventListener("click", () => {
+            const inputGroupDrinkingInput = inputGroupDrinkingMinus.parentElement.querySelector("input");
+            inputGroupDrinkingInput.value = inputGroupDrinkingInput.value > 0 ? parseInt(inputGroupDrinkingInput.value) - 1 : 0;
     });
+
     return inputGroupDrinkingMinus;
 };
 const inputGroupDrinkingPlus = () => {
@@ -20,7 +21,7 @@ const inputGroupDrinkingPlus = () => {
 
         // it can only be equal or lower than male and female together
         if (inputGroupDrinkingInput.value >= parseInt(inputGroupMaleInput.value) + parseInt(inputGroupFemaleInput.value)) {
-            return alert("O número de borrachos não pode ser maior que o número de peões e prendas juntos.");
+            return alert("Tchê, tem pouco peão e prenda pra tanto borracho!");
         }
 
         inputGroupDrinkingInput.value = parseInt(inputGroupDrinkingInput.value) + 1;
@@ -63,8 +64,8 @@ const inputGroupMaleMinus = () => {
         const inputGroupFemaleInput = document.getElementById('female');
         const inputGroupDrinkingInput = document.getElementById('drinking');
 
-        // when lowering male, if drinking is higher than male + female, lower drinking
-        if (inputGroupDrinkingInput.value > parseInt(inputGroupMaleInput.value) + parseInt(inputGroupFemaleInput.value)) {
+        // when lowering male, if drinking is higher or equal than male + female, lower drinking
+        if (inputGroupDrinkingInput.value >= parseInt(inputGroupMaleInput.value) + parseInt(inputGroupFemaleInput.value) && inputGroupMaleInput.value > 0) {
             inputGroupDrinkingInput.value = parseInt(inputGroupDrinkingInput.value) - 1;
         }
 
@@ -116,7 +117,7 @@ const inputGroupFemaleMinus = () => {
         const inputGroupMaleInput = document.getElementById('male');
         const inputGroupDrinkingInput = document.getElementById('drinking');
 
-        if(inputGroupDrinkingInput.value > parseInt(inputGroupMaleInput.value) + parseInt(inputGroupFemaleInput.value)) {
+        if(inputGroupDrinkingInput.value >= parseInt(inputGroupMaleInput.value) + parseInt(inputGroupFemaleInput.value) && inputGroupFemaleInput.value > 0) {
             inputGroupDrinkingInput.value = parseInt(inputGroupDrinkingInput.value) - 1;
         }
 

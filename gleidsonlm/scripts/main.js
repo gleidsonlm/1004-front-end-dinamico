@@ -11,7 +11,7 @@ const mainTitle = () => {
 };
 const mainText = () => {
     const mainText = document.createElement("p");
-    mainText.innerText = "Use o Churrascômetro para planejar o seu churrasco, calculando uma estimativa de quanto de carne você vai precisar comprar.";
+    mainText.innerText = "Use o Churrascômetro para planejar o seu churrasco, e receba a lista de compras no seu e-mail.";
     mainText.classList.add("card-text");
     return mainText;
 };
@@ -22,9 +22,9 @@ export const main = () => {
     main.appendChild(mainTitle());
     main.appendChild(mainText());
     main.appendChild(sectionNewsletter());
+    main.appendChild(sectionShoppingList());
     main.appendChild(sectionCalculator());
     main.appendChild(sectionCalculatorButton());
     main.appendChild(sectionOptions());
-    main.appendChild(sectionShoppingList());
     return main;
 };

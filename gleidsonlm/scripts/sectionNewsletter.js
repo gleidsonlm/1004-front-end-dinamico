@@ -1,5 +1,10 @@
 export function sectionNewsletter() {
 
+    // Create section element
+    const section = document.createElement('section');
+    section.id = 'sectionNewsletter';
+    section.classList.add('newsletter', 'flex', 'flex-column', 'align-items-center', 'card', 'p-2', 'm-2');
+
     // Create form element
     const form = document.createElement('form');
 
@@ -204,14 +209,16 @@ export function sectionNewsletter() {
         };
         localStorage.setItem('churrascometroFormData', JSON.stringify(formData));
 
-        // make sectionCalculator sectionOptions visible
-        const sectionOptions = document.querySelector('#sectionOptions');
-        sectionOptions.classList.remove('d-none');
-        const sectionCalculator = document.querySelector('#sectionCalculator');
-        sectionCalculator.classList.remove('d-none');
-        const sectionCalculatorButton = document.querySelector('#sectionCalculatorButton');
-        sectionCalculatorButton.classList.remove('d-none');
+        document.querySelector('#sectionOptions').classList.remove('d-none');
+        document.querySelector('#sectionCalculator').classList.remove('d-none');
+        document.querySelector('#sectionCalculatorButton').classList.remove('d-none');
+
+        // hide sectionNewsletter
+        document.querySelector('#sectionNewsletter').classList.add('d-none');
     });
 
-    return form;
+    // Add form to section
+    section.appendChild(form);
+
+    return section;
 }

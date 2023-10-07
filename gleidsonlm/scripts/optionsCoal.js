@@ -7,6 +7,7 @@ const optionsCoalInput = () => {
     optionCoalInput.type = "checkbox";
     optionCoalInput.name = "coal";
     optionCoalInput.checked = true;
+    optionCoalInput.setAttribute('disabled', '')
     optionCoalInput.addEventListener("click", () => {
         const event = new CustomEvent(events.OPCAO_ATUALIZADA, {
             detail: {

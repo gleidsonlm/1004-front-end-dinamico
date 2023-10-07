@@ -168,11 +168,24 @@ const shoppingList = () => {
     return shoppingList;
 };
 
+const shoppingListReload = () => {
+    const buttonReload = document.createElement("button");
+    buttonReload.classList.add("btn", "btn-primary", "m-2");
+    buttonReload.innerText = "Calcular Novamente";
+    buttonReload.addEventListener("click", () => {
+        window.location.reload();
+    });
+
+    return buttonReload;
+}
+
 export const sectionShoppingList = () => {
     const sectionShoppingList = document.createElement("section");
     sectionShoppingList.id = "shopping-list";
     sectionShoppingList.classList.add("flex", "flex-column", "align-items-center", "card", "m-2");
-    // sectionShoppingList.classList.add("d-none");
+    sectionShoppingList.classList.add("d-none");
     sectionShoppingList.appendChild(shoppingList());
+    sectionShoppingList.appendChild(shoppingListReload());
+
     return sectionShoppingList;
 };

@@ -7,6 +7,7 @@ const optionsSaltInput = () => {
     optionsSaltInput.type = "checkbox";
     optionsSaltInput.name = "salt";
     optionsSaltInput.checked = true;
+    optionsSaltInput.setAttribute('disabled', '')
     optionsSaltInput.addEventListener("click", () => {
         const event = new CustomEvent(events.OPCAO_ATUALIZADA, {
             detail: {

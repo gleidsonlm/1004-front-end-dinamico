@@ -3,11 +3,11 @@ import { events } from "./app.js";
 const optionsMeatInput = () => {
     const optionMeatInput = document.createElement("input");
     optionMeatInput.classList.add("form-check-input");
-    optionMeatInput.setAttribute('disabled', '')
     optionMeatInput.id = "carne";
     optionMeatInput.type = "checkbox";
     optionMeatInput.name = "carne";
     optionMeatInput.checked = true;
+    optionMeatInput.setAttribute('disabled', '')
     optionMeatInput.addEventListener("click", () => {
         const event = new CustomEvent(events.OPCAO_ATUALIZADA, {
             detail: {

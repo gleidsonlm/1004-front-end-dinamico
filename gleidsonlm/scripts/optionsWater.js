@@ -7,6 +7,7 @@ const optionsWaterInput = () => {
     optionsWaterInput.type = "checkbox";
     optionsWaterInput.name = "water";
     optionsWaterInput.checked = true;
+    optionsWaterInput.setAttribute('disabled', '')
     optionsWaterInput.addEventListener("click", () => {
         const event = new CustomEvent(events.OPCAO_ATUALIZADA, {
             detail: {

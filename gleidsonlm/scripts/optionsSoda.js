@@ -7,6 +7,7 @@ const optionsSodaInput = () => {
     optionsSodaInput.type = "checkbox";
     optionsSodaInput.name = "soda";
     optionsSodaInput.checked = true;
+    optionsSodaInput.setAttribute('disabled', '')
     optionsSodaInput.addEventListener("click", () => {
         const event = new CustomEvent(events.OPCAO_ATUALIZADA, {
             detail: {

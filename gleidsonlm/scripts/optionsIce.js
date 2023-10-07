@@ -7,6 +7,7 @@ const optionsIceInput = () => {
     optionsIceInput.type = "checkbox";
     optionsIceInput.name = "ice";
     optionsIceInput.checked = true;
+    optionsIceInput.setAttribute('disabled', '')
     optionsIceInput.addEventListener("click", () => {
         const event = new CustomEvent(events.OPCAO_ATUALIZADA, {
             detail: {

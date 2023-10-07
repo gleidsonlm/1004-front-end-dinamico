@@ -7,6 +7,7 @@ const optionsGarlicBreadInput = () => {
     optionsGarlicBreadInput.type = "checkbox";
     optionsGarlicBreadInput.name = "garlic-bread";
     optionsGarlicBreadInput.checked = true;
+    optionsGarlicBreadInput.setAttribute('disabled', '')
     optionsGarlicBreadInput.addEventListener("click", () => {
         const event = new CustomEvent(events.OPCAO_ATUALIZADA, {
             detail: {

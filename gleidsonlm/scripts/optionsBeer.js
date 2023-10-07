@@ -7,6 +7,7 @@ const optionsBeerInput = () => {
     optionsBeerInput.type = "checkbox";
     optionsBeerInput.name = "beer";
     optionsBeerInput.checked = true;
+    optionsBeerInput.setAttribute('disabled', '')
     optionsBeerInput.addEventListener("click", () => {
         const event = new CustomEvent(events.OPCAO_ATUALIZADA, {
             detail: {

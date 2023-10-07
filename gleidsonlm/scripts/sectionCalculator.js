@@ -9,8 +9,9 @@ export const calcProteinTotal = (event) => {
 
 export const sectionCalculatorButton = () => {
     const sectionCalculatorButton = document.createElement("button");
+    sectionCalculatorButton.id = "sectionCalculatorButton";
+    sectionCalculatorButton.classList.add("btn", "btn-primary", "m-2", "d-none");
     sectionCalculatorButton.innerText = "Calcular";
-    sectionCalculatorButton.classList.add("btn", "btn-primary", "m-2");
     sectionCalculatorButton.addEventListener("click", () => {
         const inputGroupDrinkingInput = document.getElementById("drinking");
         const inputGroupMaleInput = document.getElementById("male");
@@ -26,6 +27,8 @@ export const sectionCalculatorButton = () => {
             }, bubbles: true
         });
         document.dispatchEvent(event);
+
+        document.getElementById("sectionShoppingList").classList.remove("d-none");
     });
 
     return sectionCalculatorButton;
@@ -33,7 +36,8 @@ export const sectionCalculatorButton = () => {
 
 export const sectionCalculator = () => {
     const sectionCalculator = document.createElement("section");
-    sectionCalculator.classList.add("calculator", "flex", "flex-column", "align-items-center", "m-2");
+    sectionCalculator.id = "sectionCalculator";
+    sectionCalculator.classList.add("calculator", "flex", "flex-column", "align-items-center", "m-2", "d-none");
     sectionCalculator.appendChild(inputGroupDrinking());
     sectionCalculator.appendChild(inputGroupMale());
     sectionCalculator.appendChild(inputGroupFemale());
